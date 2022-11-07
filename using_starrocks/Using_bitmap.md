@@ -9,7 +9,7 @@ Bitmap 去重是指，当给定一个数组 A， 其取值范围为 [0, n)， �
 1. 空间优势：通过用 Bitmap 的一个 Bit 位表示对应下标是否存在，能节省大量存储空间；例如对 INT32 去重，使用普通 Bitmap 所需的存储空间只占传统去重的 1/32。StarRocks 采用 Roaring Bitmap 的优化实现，对于稀疏的 Bitmap，所占用的存储空间会进一步降低。
 2. 时间优势：Bitmap 的去重涉及的计算包括对给定下标的 Bit 置位，统计 Bitmap 的置位个数，分别为 O(1) 操作和 O(n) 操作， 并且后者可使用 CLZ，CTZ 等指令高效计算。 此外，Bitmap 去重在 MPP 执行引擎中还可以并行加速处理，每个计算节点各自计算本地子 Bitmap， 使用 BITOR 操作将这些子 Bitmap 合并成最终的 Bitmap。BITOR 操作比基于 sort 和基于 hash 的去重效率更高，且无条件依赖和数据依赖，可向量化执行。
 
-Roaring Bitmap 实现，细节可以参考：[具体论文和实现](https://github.com/RoaringBitmap/RoaringBitmap)
+Roaring Bitmap 实现，细节可以参考：[具体论文和实现](https://github.com/RoaringBitmap/RoaringBitmap)。
 
 ## 使用 Bitmap 去重
 
@@ -103,7 +103,7 @@ mysql> select page_id, count(distinct visit_users) from page_uv group by page_id
 3. 对新 value 进行编码并插入全局字典。
 4. 对事实表和更新后的全局字典进行 left join，将词典项替换为 ID。
 
-采用这种构建全局字典的方式，可以通过 Spark 或者 MR 实现全局字典的更新，和对事实表中 Value 列的替换。相比基于 Trie 树的全局字典，这种方式可以分布式化，还可以实现全局字典复用。
+采用这种构建全局字典的方式，可以通过 Spark 或者 MapReduce 实现全局字典的更新，和对事实表中 Value 列的替换。相比基于 Trie 树的全局字典，这种方式可以分布式化，还可以实现全局字典复用。
 
 但需要注意的是，使用这种方式构建全局字典时，事实表会被读取多次，并且过程中有两次 Join 操作，会导致计算全局字典使用大量额外资源。
 
