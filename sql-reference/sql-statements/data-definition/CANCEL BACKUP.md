@@ -11,8 +11,7 @@ CANCEL BACKUP FROM db_name;
 ```
 
 ## 示例
-
-1. 取消 example_db 下的 BACKUP 任务。
+取消 example_db 下的 BACKUP 任务。
 
     ```sql
     CANCEL BACKUP FROM example_db;
