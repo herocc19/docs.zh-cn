@@ -19,6 +19,8 @@
     CREATE DATABASE `LIKE`;
     Query OK, 0 rows affected (0.01 sec)
     ```
+    > 说明：
+    >     不建议使用**保留关键字**作为标识符给变量或者函数等命名。
 
 ## 保留关键字
 
