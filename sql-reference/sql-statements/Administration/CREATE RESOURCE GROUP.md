@@ -44,7 +44,7 @@ WITH resource_limit
 
 ## 示例
 
-示例一：基于多个分类器创建资源组 `rg1`。
+基于多个分类器创建资源组 `rg1`。
 
 ```SQL
 CREATE RESOURCE GROUP rg1
