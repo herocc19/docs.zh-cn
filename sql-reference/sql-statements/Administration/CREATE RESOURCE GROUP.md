@@ -9,7 +9,7 @@
 ```SQL
 CREATE RESOURCE GROUP resource_group_name
 TO CLASSIFIER1, CLASSIFIER2, ...
-WITH resource_limit
+WITH resource_limit;
 ```
 
 ## 参数说明
