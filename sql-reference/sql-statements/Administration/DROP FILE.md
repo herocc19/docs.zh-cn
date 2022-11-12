@@ -16,7 +16,7 @@ DROP FILE "file_name" [FROM database]
 | ---------- | -------- | ------------------------------------------------ |
 | file_name  | 是       | 文件名                                           |
 | database   | 否       | 文件所属的数据库                                 |
-| properties | 是       | 文件属性，具体配置项见下表：`properties`配置项。 |
+| properties | 是       | 文件属性，具体配置项见下表：`properties`配置项     |
 
 `properties` 配置项
 
