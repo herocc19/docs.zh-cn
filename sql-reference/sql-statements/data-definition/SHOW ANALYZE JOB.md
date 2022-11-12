@@ -9,19 +9,19 @@
 ## 语法
 
 ```SQL
-SHOW ANALYZE JOB [WHERE predicate]
+SHOW ANALYZE JOB [WHERE predicate];
 ```
 
 您可以使用 WHERE 子句设定筛选条件，进行返回结果筛选。该语句会返回如下列。
 
 | **列名**     | **说明**                                                     |
 | ------------ | ------------------------------------------------------------ |
-| Id           | 采集任务的ID。                                               |
+| Id           | 采集任务的 ID。                                               |
 | Database     | 数据库名。                                                   |
 | Table        | 表名。                                                       |
 | Columns      | 列名列表。                                                   |
 | Type         | 统计信息的类型。取值： FULL，SAMPLE。                        |
-| Schedule     | 调度的类型。自动采集任务固定为`SCHEDULE`。                   |
+| Schedule     | 调度的类型。自动采集任务固定为 `SCHEDULE`。                   |
 | Properties   | 自定义参数信息。                                             |
 | Status       | 任务状态，包括 PENDING（等待）、RUNNING（正在执行）、SUCCESS（执行成功）和 FAILED（执行失败）。 |
 | LastWorkTime | 最近一次采集时间。                                           |
@@ -33,7 +33,7 @@ SHOW ANALYZE JOB [WHERE predicate]
 -- 查看集群全部自定义采集任务。
 SHOW ANALYZE JOB
 
--- 查看数据库test下的自定义采集任务。
+-- 查看数据库 test 下的自定义采集任务。
 SHOW ANALYZE JOB where `database` = 'test';
 ```
 
@@ -45,4 +45,4 @@ SHOW ANALYZE JOB where `database` = 'test';
 
 [KILL ANALYZE](../data-definition/KILL%20ANALYZE.md)：取消正在运行中（Running）的统计信息收集任务。
 
-想了解更多 CBO 统计信息采集的内容，参见[CBO 统计信息](../../../using_starrocks/Cost_based_optimizer.md)。
+想了解更多 CBO 统计信息采集的内容，参见 [CBO 统计信息](../../../using_starrocks/Cost_based_optimizer.md)。
