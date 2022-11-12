@@ -11,7 +11,7 @@
 ## 语法
 
 ```SQL
-REFRESH MATERIALIZED VIEW [database.]mv_name
+REFRESH MATERIALIZED VIEW [database.]mv_name;
 ```
 
 ## 参数
