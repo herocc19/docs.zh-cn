@@ -2,12 +2,12 @@
 
 ## 功能
 
-获取当前的日期，以DATE类型返回。
+获取当前的日期，以 DATE 类型返回。
 
 ## 语法
 
 ```Haskell
-DATE CURDATE()
+DATE CURDATE();
 ```
 
 ## 示例
