@@ -9,7 +9,7 @@
 ## 语法
 
 ```Haskell
-DATETIME CONVERT_TZ(DATE|DATETIME dt, VARCHAR from_tz, VARCHAR to_tz);
+DATETIME CONVERT_TZ(DATE|DATETIME dt, VARCHAR from_tz, VARCHAR to_tz)
 ```
 
 ## 参数说明
