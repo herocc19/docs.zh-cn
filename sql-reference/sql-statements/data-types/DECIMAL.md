@@ -27,8 +27,8 @@ DECIMAL(P [, S])
   
   当前的限制：
   
-  1. 目前 fast decimal 不支持 array 类型，如果用户想使用 array(decimal)类型，请使用 array(double) 类型，或者关闭 decimalV3 之后，使用 array(decimal) 类型。
-  2. hive 直连外表中，orc 和 parquet 数据格式对 decimal 暂未支持
+  1. 目前 Fast Decimal 不支持 array 类型，如果用户想使用 array(decimal)类型，请使用 array(double) 类型，或者关闭 DecimalV3 之后，使用 array(decimal) 类型。
+  2. hive 直连外表中，orc 和 parquet 数据格式对 decimal 暂未支持。
 
 ## 示例
 
