@@ -3,13 +3,15 @@
 ## 功能
 
 该语句用于撤销一个节点下线操作。
-> **注意：**
+
+> **注意**
+>
 > 仅管理员使用！
 
 ## 语法
 
 ```sql
-CANCEL DECOMMISSION BACKEND "host:heartbeat_port"[,"host:heartbeat_port"...];
+CANCEL DECOMMISSION BACKEND "host:heartbeat_port"[,"host:heartbeat_port"...]
 ```
 
 ## 示例
