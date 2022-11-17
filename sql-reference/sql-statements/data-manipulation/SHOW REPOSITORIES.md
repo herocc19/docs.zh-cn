@@ -29,5 +29,5 @@ ErrMsg：     StarRocks 会定期检查仓库的连通性，如果出现问题�
 查看已创建的仓库：  
 
 ```sql
-    SHOW REPOSITORIES;
+SHOW REPOSITORIES;
 ```
