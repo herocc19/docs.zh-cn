@@ -11,7 +11,7 @@ INSERT {INTO | OVERWRITE} table_name
 [ PARTITION (p1, ...) ]
 [ WITH LABEL label]
 [ (column [, ...]) ]
-{ VALUES ( { expression | DEFAULT } [, ...] ) [, ...] | query };
+{ VALUES ( { expression | DEFAULT } [, ...] ) [, ...] | query }
 ```
 
 ## 参数说明
