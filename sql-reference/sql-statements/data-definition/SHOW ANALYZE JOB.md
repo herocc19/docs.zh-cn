@@ -9,7 +9,7 @@
 ## 语法
 
 ```SQL
-SHOW ANALYZE JOB [WHERE predicate];
+SHOW ANALYZE JOB [WHERE predicate]
 ```
 
 您可以使用 WHERE 子句设定筛选条件，进行返回结果筛选。该语句会返回如下列。
