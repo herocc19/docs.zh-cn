@@ -154,7 +154,7 @@ PROPERTIES (property [,property]);
 
 - `WITH SYNC | ASYNC MODE`: 如果不指定，默认为同步采集。
 
-- `WITH ``N`` BUCKETS`: `N`为直方图的分桶数。如果不指定，则使用 `fe.conf` 中的默认值。
+- `WITH N BUCKETS`: `N` 为直方图的分桶数。如果不指定，则使用 `fe.conf` 中的默认值。
 
 - PROPERTIES: 采集任务的自定义参数。如果不指定，则使用 `fe.conf` 中的默认配置。
 
@@ -402,6 +402,6 @@ KILL ANALYZE <ID>;
 
 ## 更多信息
 
-- 如需查询 FE 配置项的取值，参见 [ADMIN SHOW CONFIG](../sql-reference/sql-statements/Administration/ADMIN%20SHOW%20CONFIG.md)。
+- 如需查询 FE 配置项的取值，执行 [ADMIN SHOW CONFIG](../sql-reference/sql-statements/Administration/ADMIN%20SHOW%20CONFIG.md)。
 
-- 如需修改 FE 配置项的取值，参见 [ADMIN SET CONFIG](../sql-reference/sql-statements/Administration/ADMIN%20SET%20CONFIG.md)。
+- 如需修改 FE 配置项的取值，执行 [ADMIN SET CONFIG](../sql-reference/sql-statements/Administration/ADMIN%20SET%20CONFIG.md)。
