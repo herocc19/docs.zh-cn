@@ -1,5 +1,49 @@
 # StarRocks version 2.4
 
+## 2.4.1
+
+发布日期：2022 年 11 月 14 日
+
+### 新增特性
+
+- 新增非等值 LEFT SEMI/ANTI JOIN 支持，完善 JOIN 功能。[#13019](https://github.com/StarRocks/starrocks/pull/13019)
+
+### 功能优化
+
+- 在 `HeartbeatResponse` 添加 `aliveStatus` 属性，用以判断节点在线状态，优化节点在线判断逻辑。[#12713](https://github.com/StarRocks/starrocks/pull/12713)
+
+- 优化 Routine Load 的报错信息显示。[#12155](https://github.com/StarRocks/starrocks/pull/12155)
+
+### 问题修复
+
+- 因自 2.4.0 RC 升级至 2.4.0 导致 BE 崩溃。[#13128](https://github.com/StarRocks/starrocks/pull/13128)
+
+- 查询数据湖时，延迟物化会导致查询结果错误。[#13133](https://github.com/StarRocks/starrocks/pull/13133)
+
+- 函数 get_json_int 报错。[#12997](https://github.com/StarRocks/starrocks/pull/12997)
+
+- 索引落盘的主键表删除数据时，可能导致数据不一致。[#12719](https://github.com/StarRocks/starrocks/pull/12719)
+
+- 主键表 Compaction 可能会导致 BE 崩溃。[#12914](https://github.com/StarRocks/starrocks/pull/12914)
+
+- 函数 json_object 输入含有空字符串时，返回错误结果。[#13030](https://github.com/StarRocks/starrocks/issues/13030)
+
+- RuntimeFilter 会导致 BE 崩溃。[#12807](https://github.com/StarRocks/starrocks/pull/12807)
+
+- CBO 内过多递归计算导致 FE 挂起。[#12788](https://github.com/StarRocks/starrocks/pull/12788)
+
+- 优雅退出时 BE 可能会崩溃或报错。[#12852](https://github.com/StarRocks/starrocks/pull/12852)
+
+- 添加新列后，删除会造成 Compaction 崩溃的问题。[#12907](https://github.com/StarRocks/starrocks/pull/12907)
+
+- OLAP 外表元数据同步会导致数据不一致。[#12368](https://github.com/StarRocks/starrocks/pull/12368)
+
+- 其中一个 BE 崩溃后，相关查询小概率在其他 BE 一直运行直到超时。[#12954](https://github.com/StarRocks/starrocks/pull/12954)
+
+### 行为变更
+
+- Hive 外表解析出错时，StarRocks 会报错，不会将相关列设置为 NULL。 [#12382](https://github.com/StarRocks/starrocks/pull/12382)
+
 ## 2.4.0
 
 发布日期： 2022 年 10 月 20 日
@@ -44,7 +88,7 @@
 
 - 统计信息支持直方图，并进一步完善全量统计信息采集。相关文档，请参见[CBO统计信息](../using_starrocks/Cost_based_optimizer.md)。
 
-- 支持 Tablet 自适应多线程 Scan，降低 Scan 性能对同磁盘 Tablet 数量的依赖，从而可以简化分桶数量的设定。相关文档，请参见 [确定分桶数量](../table_design/Data_distribution.md#确定分桶数量)。
+- 支持 Tablet 自适应多线程 Scan，降低 Scan 性能对同磁盘 Tablet 数量的依赖，从而可以简化分桶数量的设定。相关文档，请参见[确定分桶数量](../table_design/Data_distribution.md#确定分桶数量)。
 
 - 支持查询 Apache  Hive 中的压缩文本（.txt）文件。
 

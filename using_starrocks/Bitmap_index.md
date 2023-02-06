@@ -30,7 +30,7 @@ Bitmap 索引能够提高指定列的查询效率。如果一个查询条件命�
         k2 DECIMAL(10, 2) DEFAULT "10.5",
         v1 CHAR(10) REPLACE,
         v2 INT SUM,
-        INDEX index_name (column_name) USING BITMAP COMMENT ''
+        INDEX index_name (column_name) [USING BITMAP] [COMMENT '']
     )
     ENGINE = olap
     AGGREGATE KEY(k1, k2)
@@ -46,6 +46,7 @@ Bitmap 索引能够提高指定列的查询效率。如果一个查询条件命�
     | column_name | 是       | 创建 Bitmap 索引的列名。您可以指定多个列名，即在建表时可同时为多个列创建 Bitmap 索引。|
     | COMMENT     | 否       | 索引备注。                                                   |
 
+    您可以指定多条 `INDEX index_name (column_name) [USING BITMAP] [COMMENT '']` 命令同时为多个列创建 bitmap 索引，且多条命令之间用逗号（,）隔开。
     关于建表的其他参数说明，参见 [CREATE TABLE](../sql-reference/sql-statements/data-definition/CREATE%20TABLE.md)。
 
 - 建表后使用 CREATE INDEX 创建 Bitmap 索引。详细参数说明和示例，参见 [CREATE INDEX](../sql-reference/sql-statements/data-definition/CREATE%20INDEX.md)。
@@ -62,7 +63,9 @@ Bitmap 索引能够提高指定列的查询效率。如果一个查询条件命�
 SHOW { INDEX[ES] | KEY[S] } FROM [db_name.]table_name [FROM db_name];
 ```
 
-> 说明：创建 Bitmap 索引为异步过程，使用如上语句只能查看到已经创建完成的索引。
+> **说明**
+>
+> 创建 Bitmap 索引为异步过程，使用如上语句只能查看到已经创建完成的索引。
 
 ## 删除索引
 
